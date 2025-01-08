@@ -28,7 +28,7 @@ bot.onText(/\/start/, (msg) => {
     + 'Welcome to the URL Shortener Bot!\n'
     + 'You can use this bot to shorten URLs using the mybios.eu.org service.\n\n'
     + 'To shorten a URL, just type or paste the URL directly in the chat, and the bot will provide you with the shortened URL.\n\n'
-    + 'If you haven\'t set your Link Monetizer API token yet, use the command:\n/api Your_Api\n\n'
+    + 'If you haven\'t set your Link Monetizer API token yet, use the command:\n/monetizerapi Your_Api\n\n'
     + 'Now, go ahead and try it out!';
 
   bot.sendMessage(chatId, welcomeMessage);
@@ -36,14 +36,14 @@ bot.onText(/\/start/, (msg) => {
 
 
 // Command: /api
-bot.onText(/\/api (.+)/, (msg, match) => {
+bot.onText(/\/monetizerapi (.+)/, (msg, match) => {
   const chatId = msg.chat.id;
   const userToken = match[1].trim(); // Get the API token provided by the user
 
   // Save the user's MyBios API token to the database
   saveUserToken(chatId, userToken);
 
-  const response = `LinkMonetizer API token set successfully.\n\nYour token: ${userToken}`;
+  const response = `LinkMonetizer API token set successfully.\n\n**Your token:** ${userToken}`;
   bot.sendMessage(chatId, response);
 });
 
