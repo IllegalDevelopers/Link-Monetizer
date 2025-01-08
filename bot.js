@@ -43,7 +43,7 @@ bot.onText(/\/monetizerapi (.+)/, (msg, match) => {
   // Save the user's MyBios API token to the database
   saveUserToken(chatId, userToken);
 
-  const response = `LinkMonetizer API token set successfully.\n\n${chalk.bold('Your Token')}: ${userToken}`;
+  const response = `LinkMonetizer API token set successfully.\n\nYour Token: ${userToken}`;
   bot.sendMessage(chatId, response);
 });
 
