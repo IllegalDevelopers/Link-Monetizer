@@ -64,7 +64,7 @@ async function shortenUrlAndSend(chatId, Url) {
   const arklinksToken = getUserToken(chatId);
 
   if (!arklinksToken) {
-    bot.sendMessage(chatId, 'Please provide your Link Monetizer API token first. Use the command: /link_monetizer Your_Api_Token');
+    bot.sendMessage(chatId, 'Please Provide Your Link Monetizer API Token First.\n\nUse The Command: /link_monetizer Your_Api_Token');
     return;
   }
 
