@@ -28,7 +28,7 @@ bot.onText(/\/start/, (msg) => {
     + 'Welcome to the URL Shortener Bot!\n'
     + 'You can use this bot to shorten URLs using the LinkMonetizer.in service.\n\n'
     + 'To shorten a URL, just type or paste the URL directly in the chat, and the bot will provide you with the shortened URL.\n\n'
-    + 'If you haven\'t set your Link Monetizer API token yet, use the command:\n/link_monetizer Your_Api\n\n'
+    + 'If you haven\'t set your MyBios API token yet, use the command:\n/linkmonetizer Your_Api\n\n'
     + 'Now, go ahead and try it out!';
 
   bot.sendMessage(chatId, welcomeMessage);
@@ -36,14 +36,14 @@ bot.onText(/\/start/, (msg) => {
 
 
 // Command: /api
-bot.onText(/\/link_monetizer (.+)/, (msg, match) => {
+bot.onText(/\/linkmonetizer (.+)/, (msg, match) => {
   const chatId = msg.chat.id;
   const userToken = match[1].trim(); // Get the API token provided by the user
 
-  // Save the user's Link Monetizer API token to the database
+  // Save the user's MyBios API token to the database
   saveUserToken(chatId, userToken);
 
-  const response = `LinkMonetizer API token set successfully.\n\nYour Token: ${userToken}`;
+  const response = `Link Monetizer Api Token Set Successfully.\n\nYour token: ${userToken}`;
   bot.sendMessage(chatId, response);
 });
 
@@ -64,7 +64,7 @@ async function shortenUrlAndSend(chatId, Url) {
   const arklinksToken = getUserToken(chatId);
 
   if (!arklinksToken) {
-    bot.sendMessage(chatId, 'Please Provide Your Link Monetizer API Token First.\n\nUse The Command: /link_monetizer Your_Api_Token');
+    bot.sendMessage(chatId, 'Please provide your Link Monetizer API token first. Use the command: /linkmonetizer Your_Api');
     return;
   }
 
