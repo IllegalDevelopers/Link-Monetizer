@@ -1,0 +1,95 @@
+<html>
+<head>
+    <center><h4>Link Generating...</h4></center>
+    <title>Redirecting...</title>
+    <script>
+        // Function to get URL parameter by name
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Get the value of 'link' parameter from the URL
+        var linkParam = getUrlParameter('link');
+
+        // Construct the redirection URL based on the 'link' parameter value
+        var redirectURL = linkParam !== '' ? 'https://telegram.me/TG_File_Store_iBot?start=file-' + linkParam : 'https://illegaldevelopers.blogspot.com/?m=1';
+
+        // Countdown timer function
+        function startCountdown(seconds) {
+            var countdownElement = document.getElementById('countdown');
+
+            function updateCountdown() {
+                countdownElement.textContent = seconds;
+                seconds--;
+
+                if (seconds < 0) {
+                    window.location.replace(redirectURL);
+                } else {
+                    setTimeout(updateCountdown, 1000); // Update every 1 second
+                }
+            }
+
+            updateCountdown();
+        }
+
+        // Start the countdown for 3 seconds
+        document.addEventListener('DOMContentLoaded', function() {
+            startCountdown(3);
+        });
+    </script>
+  <!--Button Css-->
+  <style>
+.btn {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn {
+  border-color: #2196F3;
+  color: dodgerblue;
+}
+
+.btn:hover {
+  background: #2196F3;
+  color: white;
+}
+h4{
+
+    color: white;
+
+    background-color: #009BE1;
+
+    border-radius: 5px 5px 0 0
+
+    }
+    
+</style>
+  <!--Button Css-->
+</head>
+
+<body>
+
+    <center><img src="https://i.ibb.co/MR6Lxj6/loading-1.gif" style="max-height: 900px; width: auto;" /> </center>
+  
+   <p style="font-size:50px;color:blue"><center><h2>Please Wait For <span id="countdown"> 3 </span> Seconds...</h2></center></p>
+<!--Button HTML-->
+  <br>
+  <center>
+        <a href="https://wwpa.hndrpm.com/redirect-zone/2be9bd83" class="btn" target="_blank">
+
+            <i><strong><i class="fa fa-folder-open-o" style="font-size:24px"></i> Get Your File</strong></i></a>
+    </center>
+<!--Button HTML-->    
+    <!-- Remove the script for setting href attribute as it's not necessary -->
+  
+</body>
+
+</html>
